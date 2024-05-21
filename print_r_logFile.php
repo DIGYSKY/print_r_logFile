@@ -24,7 +24,7 @@ function print_r_logFile(mixed $data, string $filename = 'log.txt', bool $delete
 
 	$dataString = is_array($data) || is_object($data) ? json_encode($data) : $data;
 
-	$success = fwrite($file, "$dateTime (GMT +0): $dataString" . PHP_EOL);
+	$success = fwrite($file, "$dateTime (UTC +0): $dataString" . PHP_EOL);
 
 	fclose($file);
 
