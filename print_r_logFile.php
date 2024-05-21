@@ -14,7 +14,7 @@ function print_r_logFile($data, $filename = 'log.txt', $delete_previous_log = fa
 
 	$dataString = is_array($data) || is_object($data) ? json_encode($data) : $data;
 
-	$success = fwrite($file, "$dateTime : $dataString");
+	$success = fwrite($file, "$dateTime : $dataString\n");
 
 	fclose($file);
 
