@@ -15,7 +15,7 @@ print_r_logFile($your_variable);
 ```txt
 2024-05-21 20:38:47 : connect
 ```
-````php
+```php
 // 1 your variable; optional : 2 you can specify the name and path of your log file; 3 you can specify whether you want to delete previous logs
 function print_r_logFile($your_variable, $filename = '/path/to/log.txt', $delete_previous_log = false)
 ```
