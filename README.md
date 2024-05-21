@@ -17,7 +17,7 @@ print_r_logFile($your_variable);
 ```
 ```php
 // 1 your variable; optional : 2 you can specify the name and path of your log file; 3 you can specify whether you want to delete previous logs
-function print_r_logFile($your_variable, $filename = '/path/to/log.txt', $delete_previous_log = false)
+print_r_logFile($your_variable, $filename = '/path/to/log.txt', $delete_previous_log = false)
 ```
 # Now it's your turn!
 
