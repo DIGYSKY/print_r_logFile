@@ -1,6 +1,16 @@
 <?php
 
-function print_r_logFile($data, $filename = 'log.txt', $delete_previous_log = false)
+/**
+ * Writes data to a log file in print_r format.
+ *
+ * This function opens a specified file and writes the provided data in print_r format to the end of the file.
+ *
+ * @param mixed $data The data to write to the file. Can be a string, array, or object.
+ * @param string $filename The path of the file to write the data to. Default is 'log.txt'.
+ * @param bool $delete_previous_log Indicates whether the previous content of the file should be deleted before writing new data. Default is false.
+ * @return bool Returns true if the data was successfully written, otherwise false.
+ */
+function print_r_logFile(mixed $data, string $filename = 'log.txt', bool $delete_previous_log = false)
 {
 	$rewrite = $delete_previous_log ? 'w' : 'a';
 
@@ -24,3 +34,4 @@ function print_r_logFile($data, $filename = 'log.txt', $delete_previous_log = fa
 
 	return true;
 }
+
