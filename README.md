@@ -20,5 +20,11 @@ print_r_logFile($your_variable);
 // 1 your variable; optional : 2 you can specify the name and path of your log file; 3 you can specify whether you want to delete previous logs
 print_r_logFile($your_variable, $filename = '/path/to/log.txt', $delete_previous_log = false)
 ```
-# Now it's your turn!
 
+# For exemple
+You can use :
+```shell
+tail -f log.txt
+```
+For view logs un real time
+# Now it's your turn!
