@@ -8,9 +8,10 @@
  * @param mixed $data The data to write to the file. Can be a string, array, or object.
  * @param string $filename The path of the file to write the data to. Default is 'log.txt'.
  * @param bool $delete_previous_log Indicates whether the previous content of the file should be deleted before writing new data. Default is false.
+ * @param bool $print_date Indicates whether the date log.
  * @return bool Returns true if the data was successfully written, otherwise false.
  */
-function print_r_logFile(mixed $data, string $filename = 'log.txt', bool $delete_previous_log = false)
+function print_r_logFile(mixed $data, string $filename = 'log.txt', bool $delete_previous_log = false, bool $print_date = true):bool
 {
 	$rewrite = $delete_previous_log ? 'w' : 'a';
 
@@ -24,7 +25,9 @@ function print_r_logFile(mixed $data, string $filename = 'log.txt', bool $delete
 
 	$dataString = is_array($data) || is_object($data) ? json_encode($data) : $data;
 
-	$success = fwrite($file, "$dateTime (UTC +0): $dataString" . PHP_EOL);
+	$date = $print_date ? "$dateTime (UTC +0): " : '';
+
+	$success = fwrite($file, "$date $dataString" . PHP_EOL);
 
 	fclose($file);
 
@@ -34,4 +37,3 @@ function print_r_logFile(mixed $data, string $filename = 'log.txt', bool $delete
 
 	return true;
 }
-
