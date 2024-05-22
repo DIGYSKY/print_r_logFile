@@ -22,6 +22,7 @@ You can use :
 tail -f log.txt
 ```
 For view logs un real time
+
 ---
 You can also save customer information in json format
 ```php
