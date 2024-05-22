@@ -26,16 +26,16 @@ You can use :
 ```shell
 tail -f log.txt
 ```
+For view logs un real time
 ```php
 print_r_logFile([
   'Time' => date("Y-m-d H:i:s").' (UTC +0)',
   'IP client' => $_SERVER['REMOTE_ADDR'],
   'URL' => $_SERVER['REQUEST_URI'],
   'Methode' => $_SERVER['REQUEST_METHOD'],
-  'Datas' => $inputLog,
+  'Datas' => $inputs,
   'Agant' => $_SERVER['HTTP_USER_AGENT'],
   'COOCKIE' => $_COOKIE
 ], 'logs/connect.json', false, false);
 ```
-For view logs un real time
 # Now it's your turn!
