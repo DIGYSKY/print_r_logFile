@@ -26,18 +26,22 @@ For view logs un real time
 ---
 You can also save customer information in json format
 ```php
-$inputJSONClient = file_get_contents('php://input');
-$inputClient = !empty($inputJSONClient) ? json_decode($inputJSONClient, TRUE) : false;
+$inputJSONLog = file_get_contents('php://input');
+$inputLog = !empty($inputJSONLog) ? json_decode($inputJSONLog, TRUE) : false;
 
 print_r_logFile([
   'Time' => date("Y-m-d H:i:s").' (UTC +0)',
   'IP client' => $_SERVER['REMOTE_ADDR'],
   'URL' => $_SERVER['REQUEST_URI'],
   'Methode' => $_SERVER['REQUEST_METHOD'],
-  'Datas' => $inputClient,
-  'Agent' => $_SERVER['HTTP_USER_AGENT'],
-  'COOCKIE' => $_COOKIE,
-  'Session' => $_SESSION
-], 'logs/client.json', false, false, ', ');
+  'Session' => $_SESSION,
+  'Datas' => $inputLog,
+  'Agant' => $_SERVER['HTTP_USER_AGENT'],
+  'COOCKIE' => $_COOKIE
+], [
+  'filename' => 'logs/connect.json',
+  'print_date' => false,
+  'separate_character' => ', '
+]);
 ```
 # Now it's your turn!
