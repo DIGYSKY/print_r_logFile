@@ -35,7 +35,7 @@ print_r_logFile([
   'URL' => $_SERVER['REQUEST_URI'],
   'Methode' => $_SERVER['REQUEST_METHOD'],
   'Datas' => $inputClient,
-  'Agant' => $_SERVER['HTTP_USER_AGENT'],
+  'Agent' => $_SERVER['HTTP_USER_AGENT'],
   'COOCKIE' => $_COOKIE,
   'Session' => $_SESSION
 ], 'logs/client.json', false, false, ', ');
